@@ -1,0 +1,151 @@
+section{
+    background-color: var(--gray-500);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 12.5rem);
+}
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1.5rem;
+    gap: 0.5rem;
+
+}
+.input-wrapper{
+    height: 3.25rem;
+    width: 28.1875rem;
+}
+
+.is-typing{
+    height: 3.25rem;
+    width: 28.1875rem;
+    background-color: var(--gray-500);
+    border-radius: 8px;
+    padding: 0 1rem;
+    padding-left: 8.25rem;
+    color: var(--gray-100);
+    border: 1.125px solid var(--gray-700); 
+}
+.is-not-typing{
+    height: 3.25rem;
+    width: 28.1875rem;
+    background-color: var(--gray-500);
+    border-radius: 8px;
+    padding: 0 1rem;
+    color: var(--gray-100);
+    border: 1.125px solid var(--gray-700); 
+}
+.input-wrapper input::placeholder{
+    color: var(--gray-100);
+    transition: opacity 0.1s;
+}
+
+.input-wrapper input:focus::placeholder{
+    opacity: 0;
+}
+
+.input-wrapper input:focus{
+    place-content: center;
+    outline: none;
+    border: 1.25px solid var(--purple-dark);
+}
+
+.input-wrapper span {
+        color: var(--gray-100); /* Placeholder color */
+        pointer-events: none; /* Ensure the span doesn't interfere with input clicks */
+        transition: opacity 0.1s;
+        opacity: 0; /* Show the placeholder initially */
+        position: relative;
+        top: -2rem;
+        left: 1rem;
+}
+.input-wrapper:focus-within .is-not-typing {
+    padding-left: 8.25rem;
+}
+
+.input-wrapper input:focus + span,
+    .input-wrapper input:not(:placeholder-shown) + span {
+        opacity: 1; /* Hide the placeholder when input is focused or has value */
+    }
+
+form button{
+    width: 5.625rem;
+    height: 3.25rem;
+    padding: 1rem;
+    font-weight: 700;
+    color: var(--gray-100);
+    border: 0;
+    border-radius: 8px;
+    background-color: var(--blue-dark);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+form button:hover{
+    background-color: var(--blue);
+}
+
+
+form button img{
+    height: 1rem;
+    width: 1rem;
+    line-height: 1.6;
+}
+
+.tasks{
+    width: 46rem;
+}
+
+.tasks-management{
+    display: flex;
+    width: 100%;
+    padding: 0 5.825rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 0.5rem;
+}
+.tasks-management > :first-child{
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.tasks-management > :last-child{
+    color: var(--purple);
+    font-weight: 700;
+}
+
+.empty-tasks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 4rem;    
+}
+
+.empty-tasks img{
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.empty-tasks > p:first-of-type {
+    padding-top: 1rem;
+    font-weight: 700;
+    color: var(--gray-100);
+
+
+}
+
+.empty-tasks > p:last-of-type {
+    color: var(--gray-200);
+}
+
+
+
